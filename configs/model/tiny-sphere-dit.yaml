@@ -1,0 +1,18 @@
+# Modified from S-FLM for BCT: adds `temp_conditioning`.
+name: tiny
+type: sphere-dit
+hidden_size: 512
+cond_dim: 128
+length: 180
+n_blocks: 8
+n_heads: 8
+dropout: 0.1
+init: ngpt
+learn_temperature_scaling: False
+eps: 1e-6
+pretrained_ckpt_path: null
+
+# BCT temperature conditioning (TFT).  Adds a zero-initialised modulation
+# driven by tau = -log T (see models/).  False builds the upstream backbone
+# unchanged.
+temp_conditioning: False

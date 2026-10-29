@@ -1,0 +1,10 @@
+train: gsm8k_test
+valid: gsm8k_test
+tokenizer_name_or_path: gpt2
+wrap: False
+cache_dir: /claire-rcp-scratch/home/deschena/discrete_diff_base/data_cache
+data_path: /claire-rcp-scratch/home/deschena/icml2026_project/data/gsm8k_test.json
+separator: '\n'
+streaming: False
+insert_train_eos: True
+insert_valid_eos: True

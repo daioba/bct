@@ -1,0 +1,29 @@
+# Modified from S-FLM for BCT: adds tempered-flow training (TFT) settings.
+name: sfm
+diffusion_type: sphere
+backbone: sphere-dit
+parameterization: mean
+time_conditioning: True
+loss_type: ce
+T: 0
+causal_attention: False
+adaLN: True
+slerp_precision: float64
+eps: 1e-6
+
+invert_time_convention: true  # true: alpha_t=1 is noisy (original SFM). false: alpha_t=1 is clean (MDLM-like, required for adaptive noise schedule).
+renormalize_weights: False
+
+# Tempered-flow training (TFT).  With `none` (the default) the corruption is
+# upstream S-FLM.  With `mixture`, a temperature T is drawn per sequence and
+# the latent is drawn exactly from the tempered bridge q_{t,T}(z|x) ∝
+# q_t(z|x)^{1/T}:
+#   P(T = 1) = bct_train_p_one, P(T = bct_train_T_low) = bct_train_p_low,
+#   and otherwise beta = 1/T ~ U(bct_train_beta_min, bct_train_beta_max).
+# Use together with `model.temp_conditioning=True`.
+bct_train_T_dist: none
+bct_train_p_one: 0.0
+bct_train_p_low: 0.0
+bct_train_T_low: 0.1
+bct_train_beta_min: 1.25
+bct_train_beta_max: 5.0

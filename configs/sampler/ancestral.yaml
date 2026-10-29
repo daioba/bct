@@ -1,0 +1,10 @@
+# Ancestral sampler (posterior sampling for MDLM / DUO)
+predictor: ancestral
+steps: 1024
+steps_policy: full      # full: use steps as-is / proportional: steps * num_tokens_to_generate
+noise_removal: ancestral  # ancestral / greedy
+use_float64: true
+p_nucleus: 1.0
+temperature: 1.0
+num_sample_batches: 2
+num_sample_log: 2

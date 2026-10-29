@@ -1,0 +1,15 @@
+name: tiny
+type: sphere-arch
+hidden_size: 512
+cond_dim: 128
+length: 180
+n_blocks: 8
+n_heads: 8
+dropout: 0.1
+init: ngpt
+eps: 1e-6
+use_time_alpha: True
+use_time_token: False
+mlp_type: gelu
+normalize_input_embed: False
+pretrained_ckpt_path: null

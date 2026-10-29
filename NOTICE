@@ -1,0 +1,9 @@
+BCT: Bayes-Consistent Tempering for Flow Language Models
+
+This repository is built on S-FLM (Language Modeling with Hyperspherical
+Flows), https://github.com/jdeschena/s-flm, which is distributed under the
+Apache License 2.0.  The S-FLM code is included with modifications; every
+modified file carries a notice in its first lines.
+
+Files added for BCT: scripts/bct/, scripts/abci_example/, tests/, NOTICE,
+and LICENSE (the S-FLM code is distributed under the same license).

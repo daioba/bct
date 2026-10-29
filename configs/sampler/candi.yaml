@@ -1,0 +1,9 @@
+# CANDI sampler — mode (nocache/cached/pure_cont) is auto-detected
+# from the algo config (pure_continuous, is_embed, sampler fields).
+predictor: candi
+steps: 1024
+noise_removal: none
+use_float64: true
+p_nucleus: 1.0
+num_sample_batches: 2
+num_sample_log: 2
